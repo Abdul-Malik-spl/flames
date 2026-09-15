@@ -16,6 +16,14 @@ let second;
 
 
 function check(){
+    fname.innerHTML=""
+    sname.innerHTML=""
+    ans.style.display="none"
+    counts.style.display="none"
+    result.style.display="none"
+    result.innerHTML=""
+    arr.forEach((a)=>{a.active=true})
+  
     // if(!name.trim||!oname.trim){
     //      errorMsg()
     //      return
@@ -46,7 +54,21 @@ if(first[i].v==second[j].v&&(first[i].active&&second[j].active)){
 showData()
 }
 
+function clearData(){
+       name.value=""
+    oname.value=""
+       fname.innerHTML=""
+    sname.innerHTML=""
+    ans.style.display="none"
+    counts.style.display="none"
+    result.style.display="none"
+    result.innerHTML=""
+    arr.forEach((a)=>{a.active=true})
+}
+
 function showData(){
+    //   name.value=""
+    // oname.value=""
     ans.style.display="flex"
     counts.style.display="flex"
     let vl=first.filter(a=>a.active).length+second.filter(a=>a.active).length
@@ -81,8 +103,16 @@ while(count>1){
     index=(index+vl-1)%arr.length
     sarr.splice(index,1)
     count--
+      
 }
-console.log(index)
-result.innerHTML=`${arr[index].value}`
-console.log(arr[index].value)
+arr[index].active=false
+// console.log(index)
+let div1=document.createElement("div")
+let div2=document.createElement("div")
+div1.innerHTML=arr.map((a)=>{return `<span class="${a.active?'':'green'}">${a.key}</span>`}).join("")
+div2.innerHTML=`<span class="result">${arr[index].value}</span>`
+result.appendChild(div1)
+result.appendChild(div2)
+// result.innerHTML=`${arr[index].value}`
+// console.log(arr[index].value)
 }
