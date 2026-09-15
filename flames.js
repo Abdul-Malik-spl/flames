@@ -57,7 +57,7 @@ function showData(){
         if(counting==vl){
             clearInterval(intv)
             result.style.display="flex"
-            showingResult()
+            showingResult(vl,counting)
         }
     },100)
     first.forEach((obj)=>{
@@ -73,6 +73,16 @@ function showData(){
         sname.appendChild(span)
     })
 }
-function showingResult(){
-
+function showingResult(vl, counting){
+    let sarr=[...arr]
+let index=0
+let count=counting
+while(count>1){
+    index=(index+vl-1)%arr.length
+    sarr.splice(index,1)
+    count--
+}
+console.log(index)
+result.innerHTML=`${arr[index].value}`
+console.log(arr[index].value)
 }
