@@ -102,7 +102,7 @@ body{
     from { text-shadow: 0 0 10px red; opacity: 0; }
     to { text-shadow: 0 0 20px red; opacity: 1; }
 }
-@media (max-width:350px){
+@media (max-width:360px){
     #ans{
     flex-direction: column;
   }
