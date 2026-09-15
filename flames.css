@@ -82,6 +82,9 @@ body{
     justify-content: center;
     gap: 10px;
 }
+.green{
+    color: green;
+}
 @keyframes fadeIn {
     from { text-shadow: 0 0 10px red; opacity: 0; }
     to { text-shadow: 0 0 20px red; opacity: 1; }
