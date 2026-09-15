@@ -84,6 +84,8 @@ body{
 }
 .green{
     color: green;
+    font-size:25px;
+    font-weight: bolder;
 }
 #clear{
   position: absolute;
